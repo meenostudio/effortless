@@ -189,6 +189,8 @@ declare module 'claude-code' {
       handoffCard: { kind: 'writing' | 'done' | 'copied'; full: boolean; at: number; seen: boolean } | null
       /** A new version above the prompt: offered, updating, updated or failed, or null. */
       updateCard: { stage: 'offer' | 'updating' | 'done' | 'failed'; version: string; note: string; at: number; detail?: string } | null
+      /** Where the update check stands: idle, checking, newest, or "found <version>". */
+      updateCheck: string
       /** The setup guide's step, or null when it is closed. */
       setupStep: 'pick' | 'jev' | 'lean' | 'handoff' | 'done' | null
       /** Choices made in the setup guide, saved together at Done or the cross. */
